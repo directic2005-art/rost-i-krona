@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#86efac"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <g opacity="0.9">
+    <rect x="0" y="0" width="80" height="600" fill="#047857"/>
+    <rect x="80" y="0" width="80" height="600" fill="#059669" opacity="0.6"/>
+    <rect x="160" y="0" width="80" height="600" fill="#047857"/>
+    <rect x="240" y="0" width="80" height="600" fill="#059669" opacity="0.5"/>
+    <rect x="320" y="0" width="80" height="600" fill="#047857"/>
+    <rect x="400" y="0" width="80" height="600" fill="#059669" opacity="0.6"/>
+    <rect x="480" y="0" width="80" height="600" fill="#047857"/>
+    <rect x="560" y="0" width="80" height="600" fill="#059669" opacity="0.5"/>
+    <rect x="640" y="0" width="80" height="600" fill="#047857"/>
+    <rect x="720" y="0" width="80" height="600" fill="#059669" opacity="0.6"/>
+  </g>
+  <g>
+    <ellipse cx="130" cy="150" rx="50" ry="26" fill="#052e16" opacity="0.3"/>
+    <rect x="125" y="40" width="10" height="100" rx="5" fill="#065f46"/>
+    <ellipse cx="130" cy="40" rx="45" ry="40" fill="#4ade80"/>
+    <ellipse cx="130" cy="25" rx="30" ry="22" fill="#a7f3d0"/>
+  </g>
+  <g>
+    <ellipse cx="430" cy="160" rx="55" ry="28" fill="#052e16" opacity="0.3"/>
+    <rect x="425" y="40" width="11" height="110" rx="5" fill="#065f46"/>
+    <ellipse cx="430" cy="40" rx="55" ry="45" fill="#10b981"/>
+    <ellipse cx="430" cy="22" rx="38" ry="25" fill="#86efac"/>
+  </g>
+  <g>
+    <ellipse cx="670" cy="180" rx="62" ry="30" fill="#052e16" opacity="0.3"/>
+    <rect x="664" y="50" width="12" height="120" rx="6" fill="#065f46"/>
+    <ellipse cx="670" cy="52" rx="52" ry="42" fill="#34d399"/>
+    <ellipse cx="670" cy="30" rx="35" ry="24" fill="#bbf7d0"/>
+  </g>
+  <ellipse cx="400" cy="600" rx="500" ry="70" fill="#065f46"/>
+</svg>

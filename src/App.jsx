@@ -187,7 +187,7 @@ function Hero() {
               <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-600 rounded-[3rem] rotate-6 opacity-20 blur-sm" />
               <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-600 rounded-[3rem] overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop"
+                  src={`${import.meta.env.BASE_URL}images/hero-garden.svg`}
                   alt="Ухоженный зелёный газон"
                   className="w-full h-full object-cover"
                   loading="eager"
@@ -209,7 +209,7 @@ function Hero() {
               </div>
               <div className="absolute -bottom-6 -left-10 w-44 h-44 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
                 <img
-                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=400&auto=format&fit=crop"
+                  src={`${import.meta.env.BASE_URL}images/work-lawn.svg`}
                   alt="Высадка саженцев"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -397,34 +397,35 @@ function Services() {
 }
 
 function Gallery() {
+  const img = (name) => `${import.meta.env.BASE_URL}images/${name}`
   const works = [
     {
-      img: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=800&auto=format&fit=crop',
+      img: img('work-flower-garden.svg'),
       title: 'Цветущий сад',
       desc: 'Ландшафтный дизайн частного участка, 1200 м²',
     },
     {
-      img: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=800&auto=format&fit=crop',
+      img: img('work-lawn.svg'),
       title: 'Зелёный газон',
       desc: 'Рулонный газон и автополив, коттеджный посёлок',
     },
     {
-      img: 'https://images.unsplash.com/photo-1443482849587-cb5cc89883b7?q=80&w=800&auto=format&fit=crop',
+      img: img('work-nursery.svg'),
       title: 'Питомник растений',
       desc: 'Подбор и высадка декоративных культур',
     },
     {
-      img: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=800&auto=format&fit=crop',
+      img: img('work-courtyard.svg'),
       title: 'Дворовая территория',
       desc: 'Озеленение жилого комплекса, 3 000 м²',
     },
     {
-      img: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=800&auto=format&fit=crop',
+      img: img('work-homestead.svg'),
       title: 'Приусадебный участок',
       desc: 'Хвойные композиции и альпийские горки',
     },
     {
-      img: 'https://images.unsplash.com/photo-1534665482403-a909d0d97c67?q=80&w=800&auto=format&fit=crop',
+      img: img('work-flowerbed.svg'),
       title: 'Клумбы и цветники',
       desc: 'Обустройство цветочных композиций',
     },
