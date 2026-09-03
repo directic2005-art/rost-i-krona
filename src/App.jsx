@@ -392,32 +392,32 @@ function Gallery() {
   const img = (name) => `${import.meta.env.BASE_URL}images/${name}`
   const works = [
     {
-      img: img('work-flower-garden.svg'),
+      img: img('work-flower-garden.webp'),
       title: 'Цветущий сад',
       desc: 'Ландшафтный дизайн частного участка, 1200 м²',
     },
     {
-      img: img('work-lawn.svg'),
+      img: img('work-lawn.webp'),
       title: 'Зелёный газон',
       desc: 'Рулонный газон и автополив, коттеджный посёлок',
     },
     {
-      img: img('work-nursery.svg'),
+      img: img('work-nursery.webp'),
       title: 'Питомник растений',
       desc: 'Подбор и высадка декоративных культур',
     },
     {
-      img: img('work-courtyard.svg'),
+      img: img('work-courtyard.webp'),
       title: 'Дворовая территория',
       desc: 'Озеленение жилого комплекса, 3 000 м²',
     },
     {
-      img: img('work-homestead.svg'),
+      img: img('work-homestead.webp'),
       title: 'Приусадебный участок',
       desc: 'Хвойные композиции и альпийские горки',
     },
     {
-      img: img('work-flowerbed.svg'),
+      img: img('work-flowerbed.webp'),
       title: 'Клумбы и цветники',
       desc: 'Обустройство цветочных композиций',
     },
