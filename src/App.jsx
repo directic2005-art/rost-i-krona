@@ -207,14 +207,6 @@ function Hero() {
                   </div>
                 </div>
               </div>
-              <div className="absolute -bottom-6 -left-10 w-44 h-44 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/work-lawn.svg`}
-                  alt="Высадка саженцев"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
             </div>
           </div>
         </div>
