@@ -518,16 +518,30 @@ function Contact() {
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 4000)
-    setFormData({ name: '', phone: '', email: '', message: '' })
+    setSubmitting(true)
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: '8ecdf599-c6a2-457a-bfab-5ae7bcc72e3a',
+          ...formData,
+        }),
+      })
+      if (res.ok) {
+        setSubmitted(true)
+        setFormData({ name: '', phone: '', email: '', message: '' })
+      }
+    } catch {}
+    setSubmitting(false)
   }
 
   return (
@@ -641,9 +655,10 @@ function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold rounded-xl shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-all duration-300 hover:-translate-y-0.5"
+                  disabled={submitting}
+                  className="w-full px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold rounded-xl shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-all duration-300 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Отправить заявку
+                  {submitting ? 'Отправка...' : 'Отправить заявку'}
                 </button>
                 <p className="text-xs text-gray-400 text-center">
                   Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных
