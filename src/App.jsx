@@ -27,6 +27,7 @@ function Header() {
   const links = [
     { label: 'О нас', href: '#about' },
     { label: 'Услуги', href: '#services' },
+    { label: 'Работы', href: '#works' },
     { label: 'Цены', href: '#prices' },
     { label: 'Контакты', href: '#contact' },
   ]
@@ -182,11 +183,16 @@ function Hero() {
           </div>
 
           <div className="relative hidden lg:flex items-center justify-center">
-            <div className="relative w-full max-w-lg aspect-square">
+            <div className="relative w-full max-w-lg aspect-[4/5]">
               <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-600 rounded-[3rem] rotate-6 opacity-20 blur-sm" />
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-600 rounded-[3rem] flex items-center justify-center overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-t from-green-700/40 to-transparent" />
-                <TreePine className="w-64 h-64 text-white/90 drop-shadow-2xl" strokeWidth={1} />
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-600 rounded-[3rem] overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop"
+                  alt="Ухоженный зелёный газон"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-green-900/50 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 border border-white/30">
                     <div className="flex items-center gap-3">
@@ -200,6 +206,14 @@ function Hero() {
                     </div>
                   </div>
                 </div>
+              </div>
+              <div className="absolute -bottom-6 -left-10 w-44 h-44 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+                <img
+                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=400&auto=format&fit=crop"
+                  alt="Высадка саженцев"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
@@ -374,6 +388,84 @@ function Services() {
                   </li>
                 ))}
               </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Gallery() {
+  const works = [
+    {
+      img: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=800&auto=format&fit=crop',
+      title: 'Цветущий сад',
+      desc: 'Ландшафтный дизайн частного участка, 1200 м²',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=800&auto=format&fit=crop',
+      title: 'Зелёный газон',
+      desc: 'Рулонный газон и автополив, коттеджный посёлок',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1443482849587-cb5cc89883b7?q=80&w=800&auto=format&fit=crop',
+      title: 'Питомник растений',
+      desc: 'Подбор и высадка декоративных культур',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=800&auto=format&fit=crop',
+      title: 'Дворовая территория',
+      desc: 'Озеленение жилого комплекса, 3 000 м²',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=800&auto=format&fit=crop',
+      title: 'Приусадебный участок',
+      desc: 'Хвойные композиции и альпийские горки',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1534665482403-a909d0d97c67?q=80&w=800&auto=format&fit=crop',
+      title: 'Клумбы и цветники',
+      desc: 'Обустройство цветочных композиций',
+    },
+  ]
+
+  return (
+    <section id="works" className="py-20 lg:py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100/80 rounded-full border border-green-200/50 mb-6">
+            <TreePine className="w-4 h-4 text-green-600" />
+            <span className="text-sm font-medium text-green-700">Портфолио</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6">
+            Наши
+            <span className="bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent"> работы</span>
+          </h2>
+          <p className="text-lg text-gray-500 leading-relaxed">
+            Реальные проекты по озеленению — от частных садов до территорий жилых комплексов.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {works.map((w) => (
+            <div
+              key={w.title}
+              className="group relative rounded-3xl overflow-hidden bg-green-50 aspect-[4/3] shadow-sm hover:shadow-xl hover:shadow-green-100/50 transition-all duration-300 hover:-translate-y-1"
+            >
+              <img
+                src={w.img}
+                alt={w.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-green-950/70 via-green-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 className="text-xl font-bold text-white mb-1">{w.title}</h3>
+                <p className="text-sm text-green-100/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {w.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -781,6 +873,7 @@ export default function App() {
       <Hero />
       <About />
       <Services />
+      <Gallery />
       <Prices />
       <Contact />
       <Footer />
